@@ -45,6 +45,7 @@ Two rules of thumb are:
 # TDD Notes
 
 <details><summary><h2>Test Behavior, Not Methods</h2></summary>
+<h3>Overview</h3>
 A common mistake in TDD is focusing on testing member functions, ie. "Why have an `add()` member function. Let's write `TEST(MyObjTest, Add)`". The `add()` functionality
 could be quite code intensive to test every scenario of when `add()` would be called. 
 
@@ -56,6 +57,23 @@ These can easily translate to the following `TEST` functions:
 - `TEST(MyObjTest, IgnoreDuplicateAdd)`
 - `TEST(MyObjTest, IgnoreEmptyAddParameter)`
 
+<h3>Using Tests to Descbribe Behavior</h3>
+Tests should describe, or document, the behavior of the system. The full understanding of a well-written test is best gleaned by combining two things:
+- The test name (Summarizes the exhibited behavior)
+- The test statements (Demonstrate the summarized behavior)
+
+**Example**
+```c++
+TEST_F(RetweetCollection, IgnoresDuplicateTweetAdded) {
+    Tweet t("msg", "@user");
+    Tweet duplicate(t);
+
+    collection.add(tweet);
+    collection.add(duplicate);
+
+    ASSERT_THAT(collection.size(), Eq(1u));
+}
+```
 </details>
 
 <details><summary><h2>Getting Green On Red</h2></summary>
