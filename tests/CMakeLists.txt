@@ -32,5 +32,34 @@ target_link_libraries(
     pthread
     GTest::gtest_main
 )
+
+add_executable(
+    ByteBufferTest
+    ./ByteBufferTest.cxx
+)
+target_include_directories(
+    ByteBufferTest
+    PUBLIC ${CMAKE_SOURCE_DIR}/core/lib/ByteBuffer
+)
+target_link_libraries(
+    ByteBufferTest
+    ByteBuffer
+    pthread
+    GTest::gtest_main
+)
+
+add_executable(
+    TestDoubleExample
+    ./HttpTestDouble.cxx
+)
+target_include_directories(
+    TestDoubleExample
+    PUBLIC ${CMAKE_SOURCE_DIR}/core/lib/TestDouble
+)
+target_link_libraries(
+    TestDoubleExample
+    pthread
+    GTest::gtest_main
+)
 include(GoogleTest)
-gtest_discover_tests(MyFuncTest)
+# gtest_discover_tests(MyQueueTest)

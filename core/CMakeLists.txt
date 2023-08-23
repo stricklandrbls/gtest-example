@@ -15,3 +15,12 @@ target_include_directories(
     MyQueue
     PUBLIC ./lib
 )
+
+add_library(
+    ByteBuffer
+    SHARED ./lib/ByteBuffer/ByteBuffer.cxx
+)
+target_include_directories(
+    ByteBuffer
+    PUBLIC ./lib/ByteBuffer
+)
