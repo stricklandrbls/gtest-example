@@ -1,3 +1,5 @@
+
+add_compile_options(-Weffc++)
 add_library(
     MyFunc
     SHARED ./lib/MyFunc/MyFunc.cxx

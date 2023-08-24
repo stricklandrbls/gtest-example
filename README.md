@@ -76,6 +76,21 @@ TEST_F(RetweetCollection, IgnoresDuplicateTweetAdded) {
 ```
 </details>
 
+<details><summary><h2><i>Test-driving</i> VS <i>Testing</i></h2></summary>
+
+Is there a difference? **Yes**.
+
+Using testing technique, you would seek to exhaustively analyze the specification in question (and possibly the code) and devise tests that exhaustively cover the behavior. TDD is instead a technique for **driving the design of the code**. Meaning, tests primarily serve the purpose of specifying the behavior of what you will build.
+
+Another explanation would be that, with a *testing* mentality, you seek to create tests that cover a breadth of concerns, ie. you create tests for five cases: zero, one, many, boundary, and exceptional cases. With a *test-driving* mentatlity, you write tests in order to drive in code that you believe meets desired specifications. Yes, TDD and a test-driving mentality generate unit tests but more so as a by-product of development.
+
+## In Regards to `Soundex` Example
+This topic arose when determining whether to write test assertions for each individual `std::pair<>` within the unordered map in
+the `encodedDigit` member function.
+
+Typically, when scenarios like this arise, it's easiest to ask, "Would having the additional assertions provide an increased understanding of how the feature works?".
+</details>
+
 <details><summary><h2>Getting Green On Red</h2></summary>
 The first rule of TDD requires you to first demonstrate test failure before you can write any code. If you write only just enough code to make a test pass, another test
 for additional functionality should fail automatically.
