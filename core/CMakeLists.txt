@@ -26,3 +26,12 @@ target_include_directories(
     ByteBuffer
     PUBLIC ./lib/ByteBuffer
 )
+
+# add_library(
+#     Soundex
+#     SHARED ./lib/Soundex.cxx
+# )
+# target_include_directories(
+#     Soundex
+#     PUBLIC ./lib/Soundex
+# )

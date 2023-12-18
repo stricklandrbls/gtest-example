@@ -61,4 +61,19 @@ target_link_libraries(
     pthread
     GTest::gtest_main
 )
+
+
+add_executable(
+    SoundexTest
+    ./SoundexTest.cxx
+)
+target_include_directories(
+    SoundexTest
+    PUBLIC ${CMAKE_SOURCE_DIR}/core/lib/Soundex
+)
+target_link_libraries(
+    SoundexTest
+    pthread
+    GTest::gtest_main
+)
 include(GoogleTest)
